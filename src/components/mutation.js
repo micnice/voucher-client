@@ -1,27 +1,71 @@
 import gql from 'graphql-tag';
 
-export const CREATE_BENEFICIARY_IDENTIFICATION = gql`mutation createBeneficiaryIdentification($BeneficiaryIdentificationInput:BeneficiaryIdentificationInput){
-    createBeneficiaryIdentification(BeneficiaryIdentificationInput:$BeneficiaryIdentificationInput){
+// export const CREATE_BENEFICIARY_IDENTIFICATION = gql`mutation createBeneficiaryIdentification($beneficiaryIdentificationInput:BeneficiaryIdentificationInput){
+//     createBeneficiaryIdentification(beneficiaryIdentificationInput:$beneficiaryIdentificationInput){
+//       id
+//       firstName
+//       lastName
+//       maritalStatus
+//       birthDate
+//       educationStatus
+//       lmp
+//       parity
+//       identificationNumber
+//       latitude
+  //  `;
+
+  //  export const UPDATE_BENEFICIARY_IDENTIFICATION= gql``;
+
+  export const  CREATE_VOUCHER_TYPE=gql`mutation createVoucherType($voucherTypeInput:VoucherTypeInput){
+    createVoucherType(voucherTypeInput:$voucherTypeInput){
+      name
+      description
+      level{
+        id
+        name
+        description
+      }
+      price
+    }
+  }`;
+
+  export const CREATE_PERMISSION=gql`mutation createPermission($permissionInput:PermissionInput){
+    createPermission(permissionInput: $permissionInput){
       id
-      firstName
-      lastName
-      maritalStatus
-      birthDate
-      educationStatus
-      lmp
-      parity
-      identificationNumber
-      latitude
-   `;
+      name
+    }
+  }`;
 
-   export const UPDATE_BENEFICIARY_IDENTIFICATION= gql``;
+  
 
-   export const CREATE_VOUCHER_TYPE=gql`mutation createVoucherType($voucherTypeInput:VoucherTypeInput){
-    createVoucherType(voucherTypeInput: $voucherTypeInput){
+  export const CREATE_ROLE=gql`mutation createRole($roleInput:RoleInput) {
+    createRole(roleInput:$roleInput){
       name
       description
     }
+  }`
+
+  export const CREATE_USER=gql`
+  mutation createUser($userInput:UserInput){
+    createUser(userInput: $userInput){
+      id
+      firstName
+      lastName
+      username
+      email
+      roleSet
+    }
   }`;
+
+  export const CREATE_LEVEL=gql`mutation createLevel($levelInput:LevelInput){
+    createLevel(levelInput: $levelInput){
+      id
+      name
+      description
+    }
+  }`
+
+  
   export const UPDATE_VOUCHER_TYPE=gql`mutation updateVoucherType($voucherTypeInput:VoucherTypeInput,$id:ID){
     updateVoucherType(voucherTypeInput: $voucherTypeInput, id: $id){
       name
@@ -160,6 +204,7 @@ export const CREATE_BENEFICIARY_IDENTIFICATION = gql`mutation createBeneficiaryI
       longitude
     }
   }`;
+
 
   
   
