@@ -7,7 +7,7 @@ import { print } from 'graphql';
 import { VOUCHER_TYPE_LIST } from './../queryResolver';
 import { GRAPHQL_BASE_URL } from './../BaseUrlUtil';
 import { NavLink } from 'react-router-dom'
-import { MDBDataTable, MDBContainer, MDBRow, MDBCol, MDBBreadcrumb, MDBBreadcrumbItem, } from "mdbreact"
+import {MDBBtn,MDBIcon, MDBDataTable, MDBContainer, MDBRow, MDBCol, MDBBreadcrumb, MDBBreadcrumbItem, } from "mdbreact"
 
 
 
@@ -15,7 +15,8 @@ import { MDBDataTable, MDBContainer, MDBRow, MDBCol, MDBBreadcrumb, MDBBreadcrum
 export default class VoucherTypeList extends Component {
 
   state = {
-    voucherList: []
+    voucherList: [],
+   
   }
 
   componentDidMount() {
@@ -30,7 +31,6 @@ export default class VoucherTypeList extends Component {
   render() {
 
     const dataList = this.state.voucherList;
-    console.log("outcome===" + dataList.data)
     const data = {
       columns: [
         {
@@ -45,12 +45,7 @@ export default class VoucherTypeList extends Component {
           sort: 'asc',
           width: 270
         },
-        // {
-        //   label: 'Level',
-        //   field: 'level',
-        //   sort: 'asc',
-        //   width: 200
-        // },
+       
         {
           label: 'Price',
           field: 'price',
@@ -74,6 +69,9 @@ export default class VoucherTypeList extends Component {
                 </Container>
         <br/> <br/><br/> <br/>
         <Container>
+        <MDBBtn size="lg" type="submit">
+            <NavLink to="/administration/voucher-type"><MDBIcon icon="plus" /></NavLink>
+          </MDBBtn>
         <MDBDataTable
           striped
           bordered

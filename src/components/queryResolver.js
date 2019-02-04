@@ -16,7 +16,7 @@ export const LMPLIST = gql`query lMPList($lmp:String){
     }
   }`;
 
-  export const VOUCHER_SALES_LIST=gql`query salesList{
+export const VOUCHER_SALES_LIST = gql`query salesList{
     salesList{
 
       voucherSerialNumber
@@ -26,7 +26,7 @@ export const LMPLIST = gql`query lMPList($lmp:String){
     }
   }`;
 
-  export const BENEFICIARY_WITHOUT_SALES = gql`query beneficiariesWithNoSales{
+export const BENEFICIARY_WITHOUT_SALES = gql`query beneficiariesWithNoSales{
     
     beneficiariesWithNoSales{
      
@@ -63,7 +63,9 @@ export const LEVEL_LIST = gql`query levelList{
     }
   }`;
 
-  export const BENEFICIARY_LIST=gql`
+
+
+export const BENEFICIARY_LIST = gql`
   query beneficiaryIdentificationList{
     beneficiaryIdentificationList{
     
@@ -107,10 +109,12 @@ export const ROLE_LIST = gql`
   }
 }`;
 
-export const PERMISSION_LIST=gql`
+export const PERMISSION_LIST = gql`
 query permissionList{
   permissionList{
+
     name
+    
   }
 }`;
 
@@ -135,10 +139,9 @@ export const TRACK_BENEFICIARY = gql`query trackBeneficiary($identificationNumbe
 
 export const VOUCHER_TYPE_LIST = gql`query{
   voucherTypeList{
-  
+    id
     name
     description
- 
     price
   }
 }`;
@@ -294,5 +297,32 @@ export const PREGNANCY_LIST = gql`query pregnacyStatusList {
 export const SERVICE_PROVISION_LEVEL_LIST = gql`query serviceProvisionLevelList{
     serviceProvisionLevelList
   }`;
+
+export const VOUCHER_SET_LIST = gql`query voucherSetList{
+    voucherSetList{
+      name
+      description
+  
+    }
+  }`
+
+export const VOUCHER_SET_LIST_FULL = gql`query voucherSetList{
+    voucherSetList{
+      id
+      name
+      description
+      voucherTypeSet{
+        id
+        name
+        description
+        level{
+          id
+          name
+          description
+        }
+        price
+      }
+    }
+  }`
 
 

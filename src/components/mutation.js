@@ -38,10 +38,16 @@ import gql from 'graphql-tag';
 
   
 
-  export const CREATE_ROLE=gql`mutation createRole($roleInput:RoleInput) {
-    createRole(roleInput:$roleInput){
+  export const CREATE_ROLE=gql`mutation createRole($roleInput:RoleInput){
+    createRole(roleInput: $roleInput){
+      id
       name
       description
+      permissionSet
+      {
+        id
+        name
+      }
     }
   }`
 
@@ -203,6 +209,24 @@ import gql from 'graphql-tag';
       latitude
       longitude
     }
+  }`;
+
+  export const CREATE_VOUCHER_SET=gql`mutation createVoucherSet($voucherSetInput:VoucherSetInput){
+    createVoucherSet(voucherSetInput: $voucherSetInput){
+      id
+      name
+      description
+      voucherTypeSet{
+        id
+        name
+        description
+        level{id
+        name
+        description}
+      }
+      
+    }
+    
   }`;
 
 

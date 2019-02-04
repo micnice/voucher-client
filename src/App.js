@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Home from './components/Home'; 
-import AboutUs from './components/AboutUs';
+
 import CityList from './components/administration/CityList';
 import LevelList from './components/administration/LevelList';
 import UserList from './components/administration/UserList';
@@ -24,6 +24,9 @@ import RoleList from './components/administration/RoleList';
 import RoleAdd from './components/administration/RoleAdd';
 import PermisionsList from './components/administration/PermisionsList';
 import PermisionsAdd from './components/administration/PermisionsAdd';
+import VoucherSetPage from './components/administration/VoucherSetPage';
+import VoucherSetPageAdd from './components/administration/VoucherSetPageAdd';
+
 
 
 
@@ -34,7 +37,7 @@ class App extends Component {
       <div>
         <Switch>
          <Route exact path="/" exact component={Home} />
-         <Route exact path="/about" exact  component={AboutUs} /> 
+         
          <Route exact path="/administration" exact  component={AdministrationList} /> 
          <Route exact path="/reporting" exact  component={ReportingList} /> 
          <Route exact path="/reporting/beneficiary-list" exact  component={BeneficiaryList} /> 
@@ -56,6 +59,10 @@ class App extends Component {
          <Route exact path="/administration/role-add"  exact  component={RoleAdd} />
          <Route exact path="/administration/permission-list"  exact  component={PermisionsList} />
          <Route exact path="/administration/permission-add"  exact  component={PermisionsAdd} />
+         <Route exact path="/administration/voucher-set"  exact  component={VoucherSetPage} />
+         <Route exact path="/administration/voucher-set-add"  exact  component={VoucherSetPageAdd} />
+
+
 
          
        

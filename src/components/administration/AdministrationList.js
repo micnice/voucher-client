@@ -40,11 +40,12 @@ export default class AdministrationList extends Component {
                             </tr>
                             <tr>
                                 <td><b><NavLink to="/administration/permission-list">Permission</NavLink></b></td>
-                            </tr>
-                            <tr>
-                                <td><b><NavLink to="/administration/voucher-type-list">Voucher Type </NavLink></b></td>
                                 <td><b><NavLink to="/administration/service-provider-list">Service Provider</NavLink></b></td>
 
+                            </tr>
+                            <tr>
+                                <td><b><NavLink to="/administration/voucher-set">Voucher Set </NavLink></b></td>
+                                <td><b><NavLink to="/administration/voucher-type-list">Voucher Type </NavLink></b></td>
                             </tr>
                             <tr>
                                 <td><b><NavLink to="/administration/parameter-configuartion">Parameter Configuration</NavLink></b></td>

@@ -8,6 +8,7 @@ import { BENEFICIARY_LIST } from './../queryResolver';
 import { GRAPHQL_BASE_URL } from './../BaseUrlUtil';
 import { NavLink } from 'react-router-dom'
 import { MDBIcon, MDBBtn, MDBDataTable, MDBContainer, MDBRow, MDBCol, MDBBreadcrumb, MDBBreadcrumbItem, } from "mdbreact";
+import Report from 'react-data-report';
 
 export default class BeneficiaryList extends Component {
 
@@ -111,11 +112,14 @@ export default class BeneficiaryList extends Component {
                 </Container>
                 <br /> <br /><br /> <br />
                 <Container>
+
+                <Report data={data}/>
                     <MDBDataTable
                         striped
                         bordered
                         small
-                        data={data} />
+                        data={beneficiaryList} />
+                     
                 </Container>
                 <FooterPage />
             </div>

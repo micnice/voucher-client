@@ -7,8 +7,10 @@ import { print } from 'graphql';
 import Header from './../fragments/Header';
 import FooterPage from '../fragments/FooterPage';
 import { Container } from 'reactstrap';
-import { MDBCol, MDBBtn, MDBRow } from 'mdbreact';
+
 import { Redirect } from 'react-router-dom';
+import { MDBContainer, MDBBtn, MDBIcon, MDBRow, MDBCol, MDBBreadcrumb, MDBBreadcrumbItem, } from 'mdbreact';
+import { NavLink } from 'react-router-dom'
 
 
 
@@ -21,7 +23,7 @@ export default class VoucherTypeAdd extends Component {
             level: "",
             price: "",
             levelList: [],
-            toVoucherList:false
+            toVoucherList: false
         }
         this.handleVoucherTypeSubmit = this.handleVoucherTypeSubmit.bind(this);
         this.handleVoucherTypeChange = this.handleVoucherTypeChange.bind(this);
@@ -50,7 +52,7 @@ export default class VoucherTypeAdd extends Component {
                 }
             }).then(() => this.setState(() => ({
                 toVoucherList: true
-              })))
+            })))
     }
 
     componentDidMount() {
@@ -59,7 +61,7 @@ export default class VoucherTypeAdd extends Component {
                 'content-Type': 'json/application'
             }
         }).then((result) => {
-            console.log("------TEST-----" + result)
+            
             this.setState({ levelList: result.data.data.levelList });
         });
     }
@@ -68,12 +70,22 @@ export default class VoucherTypeAdd extends Component {
 
         if (this.state.toVoucherList === true) {
             return <Redirect to='/administration/voucher-type-list' />
-          }
+        }
         const { name, description, level, price } = this.state;
         let levelList = this.state.levelList.map(l => { return <option key={l.id}>{l.name}</option> });
+
         return (
             <div>
                 <Header />
+                <br /> <br />
+                <MDBContainer>
+
+                    <MDBBreadcrumb >
+                        <MDBBreadcrumbItem><NavLink to="/administration">Administration</NavLink></MDBBreadcrumbItem>
+                        <MDBBreadcrumbItem><NavLink to="/administration/voucher-type-list">Voucher Type List</NavLink></MDBBreadcrumbItem>
+                        <MDBBreadcrumbItem active>Voucher Add</MDBBreadcrumbItem>
+                    </MDBBreadcrumb>
+                </MDBContainer>
                 <Container>
                     <Fragment>
                         <div>
@@ -130,8 +142,6 @@ export default class VoucherTypeAdd extends Component {
                                             </select>
                                         </div>
                                     </MDBCol>
-
-
                                 </MDBRow>
 
                                 <MDBBtn color="blue" type="submit">

@@ -37,7 +37,6 @@ class Header extends React.Component {
                     <div className="d-none d-md-inline">About us</div>
                   </DropdownToggle>
                   <DropdownMenu right>
-                    <DropdownItem href="#!">Meet The Team</DropdownItem>
                     <DropdownItem href="#!">Contact Us</DropdownItem>
                     <DropdownItem href="#!">About The System</DropdownItem>
                     <DropdownItem href="#!">Privacy Policy</DropdownItem>

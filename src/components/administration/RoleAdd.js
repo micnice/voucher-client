@@ -3,11 +3,12 @@ import axios from 'axios';
 import { print } from 'graphql';
 import { CREATE_ROLE } from './../mutation';
 import { GRAPHQL_BASE_URL } from './../BaseUrlUtil';
+import {PERMISSION_LIST} from './../queryResolver';
 import Header from './../fragments/Header';
 import FooterPage from './../fragments/FooterPage';
 import { Redirect } from 'react-router-dom';
 
-import { MDBContainer,MDBBtn, MDBIcon, MDBRow, MDBCol, MDBBreadcrumb, MDBBreadcrumbItem, } from 'mdbreact';
+import {MDBInput, MDBContainer,MDBBtn, MDBIcon, MDBRow, MDBCol, MDBBreadcrumb, MDBBreadcrumbItem, } from 'mdbreact';
 import { NavLink } from 'react-router-dom'
 
 
@@ -19,6 +20,8 @@ export default class RoleAdd extends Component {
             name: "",
             description: "",
             isSaved:false,
+            permsionList:[],
+            permissionSet:[],
         }
     }
 
@@ -27,8 +30,9 @@ export default class RoleAdd extends Component {
         axios.post(GRAPHQL_BASE_URL, {
             query: print(CREATE_ROLE), variables: {
                 roleInput: {
-                    name: this.state.name,
-                    description: this.state.description
+                    name: e.target.name.value,
+                    description: e.target.description.value,
+                    permissionSet:this.state.permissionSet
                 }
             }
         },{
@@ -40,12 +44,23 @@ export default class RoleAdd extends Component {
           })))
  }
 
+ componentDidMount(){
+   axios.post(GRAPHQL_BASE_URL,{
+     query:print(PERMISSION_LIST)
+   }).then(res =>{this.setState({permsionList:res.data.data.permissionList})})
+ }
+
 
  handleRoleChange=(e)=>{
-   this.setState({[e.target.name]:e.target.value})
+   this.state.permissionSet.push(""+e.target.value)
  }
 
  render(){
+  
+
+  let pl = this.state.permsionList.map(p=>{
+       return( <MDBInput key={p.id} name="permissionSet" onChange={this.handleRoleChange} label={p.name} type="checkbox" />)
+  });
 
   if (this.state.isSaved === true) {
     return <Redirect to='/administration/role-list' />
@@ -74,9 +89,8 @@ export default class RoleAdd extends Component {
               </label>
               <input
                 type="text"
-                value={name}
                 name="name"
-                onChange={this.handleRoleChange}
+               
                 className="form-control"
               />
               <br />
@@ -85,11 +99,13 @@ export default class RoleAdd extends Component {
               </label>
               <input
                 type="text"
-                value={description}
-                name="description"
-                onChange={this.handleRoleChange}
+               name="description"
                 className="form-control"
               />
+
+              <div>
+                {pl}
+              </div>
               <div className="text-center mt-4">
                 <MDBBtn color="blue" type="submit">Save</MDBBtn>
               </div>

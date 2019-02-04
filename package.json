@@ -5,18 +5,20 @@
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.2.1",
+    "chart.js": "^2.7.3",
     "graphql": "^14.0.2",
     "graphql-tag": "^2.10.0",
+    "highcharts": "^7.0.2",
     "mdbreact": "^4.8.7",
     "react": "^16.7.0",
-    "react-checkbox-group": "^4.0.1",
+    "react-chartjs-2": "^2.7.4",
     "react-dom": "^16.7.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.2",
     "reactstrap": "^7.0.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=2019 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

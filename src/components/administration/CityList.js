@@ -8,13 +8,18 @@ import { print } from 'graphql';
 import { CITY_LIST } from './../queryResolver';
 import { GRAPHQL_BASE_URL } from './../BaseUrlUtil';
 import { MDBBtn, MDBDataTable, MDBIcon, MDBRow, MDBCol, MDBBreadcrumb, MDBBreadcrumbItem } from 'mdbreact';
+import { Bar, Line, Pie } from 'react-chartjs-2';
 
 
 export default class CityList extends Component {
-
-  state = {
+constructor(){
+  super();
+  this.state = {
     cityList: [],
+  
   }
+}
+  
   componentDidMount() {
 
     axios.post(GRAPHQL_BASE_URL, {
@@ -26,7 +31,7 @@ export default class CityList extends Component {
 
   render() {
     const cityList = this.state.cityList;
-    
+
 
     const data = {
       columns: [
@@ -57,6 +62,8 @@ export default class CityList extends Component {
           </MDBBreadcrumb>
         </Container>
         <br /> <br /><br /> <br />
+
+        
         <Container>
 
           <MDBBtn size="lg" type="submit">

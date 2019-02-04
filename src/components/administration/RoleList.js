@@ -58,7 +58,7 @@ export default class RoleList extends Component {
         </Container>
         <br /> <br /><br /> <br />
         <Container>
-
+          <MDBBtn size="sm" color="primary" className="my-0" type="submit"><MDBIcon icon="search" /></MDBBtn>
           <MDBBtn size="lg" type="submit">
             <NavLink to="/administration/role-add"><MDBIcon icon="plus" /></NavLink>
           </MDBBtn>
