@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import { Table, Container, } from 'reactstrap';
+import {Container, } from 'reactstrap';
 import { NavLink } from 'react-router-dom'
 import Header from './../fragments/Header';
 import FooterPage from '../fragments/FooterPage';
-import { MDBContainer, MDBTable, MDBTableBody, MDBTableHead, MDBRow, MDBCol, MDBBreadcrumb, MDBBreadcrumbItem, } from "mdbreact";
+import { MDBTable, MDBTableBody, MDBTableHead, MDBRow, MDBCol, MDBBreadcrumb, MDBBreadcrumbItem, } from "mdbreact";
 
 export default class AdministrationList extends Component {
 
     render() {
         return (
             <div> <Header />
-                <br /> <br />
+               <br/><br/><br/><br/>
                 <Container>
                     <MDBRow>
                         <MDBCol sm="12"><MDBBreadcrumb>

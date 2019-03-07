@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import Header from './../fragments/Header';
 import FooterPage from './../fragments/FooterPage';
-import { Container, Table, Link } from 'reactstrap';
+import { Container} from 'reactstrap';
 import axios from 'axios';
 import { print } from 'graphql';
 import { VOUCHER_TYPE_LIST } from './../queryResolver';
 import { GRAPHQL_BASE_URL } from './../BaseUrlUtil';
 import { NavLink } from 'react-router-dom'
-import {MDBBtn,MDBIcon, MDBDataTable, MDBContainer, MDBRow, MDBCol, MDBBreadcrumb, MDBBreadcrumbItem, } from "mdbreact"
+import {MDBBtn,MDBIcon, MDBDataTable, MDBBreadcrumb, MDBBreadcrumbItem, } from "mdbreact"
 
 
 
@@ -60,7 +60,7 @@ export default class VoucherTypeList extends Component {
     return (
       <div>
         <Header />
-        <br /> <br />
+        <br/><br/><br/><br/>
                 <Container>
                     <MDBBreadcrumb>
                         <MDBBreadcrumbItem><NavLink to="/administration">Administration</NavLink></MDBBreadcrumbItem>

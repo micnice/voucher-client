@@ -1,16 +1,15 @@
 import React, { Component, Fragment } from 'react'
 import Header from './../fragments/Header';
 import FooterPage from './../fragments/FooterPage';
-import { Container, Table, Link } from 'reactstrap';
 import { NavLink } from 'react-router-dom'
 import axios from 'axios';
 import { print } from 'graphql';
 import { CREATE_VOUCHER_SET } from './../mutation';
 import { VOUCHER_TYPE_LIST } from './../queryResolver';
 import { GRAPHQL_BASE_URL } from './../BaseUrlUtil';
-import { MDBInput, MDBFormInline, MDBBtn, MDBContainer, MDBDataTable, MDBIcon, MDBRow, MDBCol, MDBBreadcrumb, MDBBreadcrumbItem } from 'mdbreact';
+import { MDBInput, MDBBtn, MDBContainer,  MDBRow, MDBCol, MDBBreadcrumb, MDBBreadcrumbItem } from 'mdbreact';
 import { Redirect } from 'react-router-dom';
-import { Checkbox, CheckboxGroup } from 'react-checkbox-group';
+
 
 
 export default class VoucherSetPageAdd extends Component {
@@ -79,7 +78,7 @@ export default class VoucherSetPageAdd extends Component {
         return (
             <div>
                 <Header />
-                <br /> <br />
+                <br/><br/><br/><br/>
                 <MDBContainer>
 
                     <MDBBreadcrumb >

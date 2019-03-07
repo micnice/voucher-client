@@ -3,13 +3,13 @@
 import React, { Component } from 'react'
 import Header from './../fragments/Header';
 import FooterPage from './../fragments/FooterPage';
-import { Container, Table, Link } from 'reactstrap';
+import { Container,} from 'reactstrap';
 import axios from 'axios';
 import { print } from 'graphql';
 import { BENEFICIARY_WITHOUT_SALES } from './../queryResolver';
 import { GRAPHQL_BASE_URL } from './../BaseUrlUtil';
 import { NavLink } from 'react-router-dom'
-import { MDBIcon, MDBBtn, MDBDataTable, MDBContainer, MDBRow, MDBCol, MDBBreadcrumb, MDBBreadcrumbItem, } from "mdbreact";
+import { MDBDataTable, MDBBreadcrumb, MDBBreadcrumbItem, } from "mdbreact";
 
 export default class BeneficiaryWithoutSales extends Component {
 
@@ -60,7 +60,7 @@ export default class BeneficiaryWithoutSales extends Component {
         return (
             <div>
                 <Header />
-                <br /> <br />
+                <br/><br/><br/><br/>
                 <Container>
                     <MDBBreadcrumb>
                         <MDBBreadcrumbItem><NavLink to="/reporting">Reporting</NavLink></MDBBreadcrumbItem>

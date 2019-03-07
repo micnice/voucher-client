@@ -1,14 +1,14 @@
 import React, { Component, Fragment } from 'react'
 import Header from './../fragments/Header';
 import FooterPage from './../fragments/FooterPage';
-import { Container, Table, Link } from 'reactstrap';
+import { Container, } from 'reactstrap';
 import { NavLink } from 'react-router-dom'
 import axios from 'axios';
 import { print } from 'graphql';
 import { CITY_LIST } from './../queryResolver';
 import { GRAPHQL_BASE_URL } from './../BaseUrlUtil';
 import { MDBBtn, MDBDataTable, MDBIcon, MDBRow, MDBCol, MDBBreadcrumb, MDBBreadcrumbItem } from 'mdbreact';
-import { Bar, Line, Pie } from 'react-chartjs-2';
+
 
 
 export default class CityList extends Component {
@@ -54,7 +54,7 @@ constructor(){
     return (
       <div>
         <Header />
-        <br /> <br />
+        <br/><br/><br/><br/>
         <Container>
           <MDBBreadcrumb>
             <MDBBreadcrumbItem><NavLink to="/administration">Administration</NavLink></MDBBreadcrumbItem>

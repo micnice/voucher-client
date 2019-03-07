@@ -8,9 +8,9 @@ import Header from './../fragments/Header';
 import FooterPage from '../fragments/FooterPage';
 import { Container } from 'reactstrap';
 
-import { Redirect } from 'react-router-dom';
-import { MDBContainer, MDBBtn, MDBIcon, MDBRow, MDBCol, MDBBreadcrumb, MDBBreadcrumbItem, } from 'mdbreact';
-import { NavLink } from 'react-router-dom'
+import { Redirect,NavLink } from 'react-router-dom';
+import { MDBContainer, MDBBtn, MDBRow, MDBCol, MDBBreadcrumb, MDBBreadcrumbItem, } from 'mdbreact';
+
 
 
 
@@ -77,7 +77,7 @@ export default class VoucherTypeAdd extends Component {
         return (
             <div>
                 <Header />
-                <br /> <br />
+                <br/><br/><br/><br/>
                 <MDBContainer>
 
                     <MDBBreadcrumb >

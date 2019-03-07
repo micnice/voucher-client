@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import Header from './../fragments/Header';
 import FooterPage from './../fragments/FooterPage';
-import { Container, Table, Link } from 'reactstrap';
+import { Container } from 'reactstrap';
 import axios from 'axios';
 import { print } from 'graphql';
 import { BENEFICIARY_LIST } from './../queryResolver';
 import { GRAPHQL_BASE_URL } from './../BaseUrlUtil';
 import { NavLink } from 'react-router-dom'
-import { MDBIcon, MDBBtn, MDBDataTable, MDBContainer, MDBRow, MDBCol, MDBBreadcrumb, MDBBreadcrumbItem, } from "mdbreact";
-import Report from 'react-data-report';
+import { MDBDataTable, MDBBreadcrumb, MDBBreadcrumbItem, } from "mdbreact";
+
 
 export default class BeneficiaryList extends Component {
 
@@ -103,7 +103,7 @@ export default class BeneficiaryList extends Component {
         return (
             <div>
                 <Header />
-                <br /> <br />
+                <br/><br/><br/><br/>
                 <Container>
                     <MDBBreadcrumb>
                         <MDBBreadcrumbItem><NavLink to="/reporting">Reporting</NavLink></MDBBreadcrumbItem>
@@ -113,7 +113,6 @@ export default class BeneficiaryList extends Component {
                 <br /> <br /><br /> <br />
                 <Container>
 
-                <Report data={data}/>
                     <MDBDataTable
                         striped
                         bordered

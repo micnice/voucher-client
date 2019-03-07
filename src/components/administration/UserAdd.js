@@ -7,9 +7,9 @@ import Header from './../fragments/Header';
 import FooterPage from './../fragments/FooterPage';
 import { Redirect } from 'react-router-dom';
 import { ROLE_LIST } from './../queryResolver';
-import { Checkbox, CheckboxGroup } from 'react-checkbox-group';
 
-import { MDBInput, MDBContainer, MDBBtn, MDBIcon, MDBRow, MDBCol, MDBBreadcrumb, MDBBreadcrumbItem, } from 'mdbreact';
+
+import { MDBContainer, MDBBtn, MDBRow, MDBCol, MDBBreadcrumb, MDBBreadcrumbItem, } from 'mdbreact';
 import { NavLink } from 'react-router-dom'
 
 
@@ -74,7 +74,7 @@ export default class LevelAdd extends Component {
         return (
             <div>
                 <Header />
-                <br /> <br />
+                <br/><br/><br/><br/>
                 <MDBContainer>
 
                     <MDBBreadcrumb >

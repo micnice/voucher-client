@@ -7,7 +7,7 @@ import axios from 'axios';
 import { print } from 'graphql';
 import { VOUCHER_SET_LIST } from './../queryResolver';
 import { GRAPHQL_BASE_URL } from './../BaseUrlUtil';
-import { MDBContainer,MDBBtn, MDBDataTable, MDBIcon, MDBRow, MDBCol, MDBBreadcrumb, MDBBreadcrumbItem } from 'mdbreact';
+import {MDBBtn, MDBDataTable, MDBIcon,  MDBBreadcrumb, MDBBreadcrumbItem } from 'mdbreact';
 
 export default class VoucherSetPage extends Component{
   state = {
@@ -45,7 +45,7 @@ export default class VoucherSetPage extends Component{
       return (
         <div>
           <Header />
-          <br /> <br />
+          <br/><br/><br/><br/>
           <Container>
             <MDBBreadcrumb>
               <MDBBreadcrumbItem><NavLink to="/administration">Administration</NavLink></MDBBreadcrumbItem>

@@ -188,7 +188,7 @@ export const CITY_BY_NAME = gql`query cityByName($name:String){
 
 export const SERVICE_PROVIDER_LIST = gql`query serviceProviderList{
     serviceProviderList{
-     name
+      name
       description
     }
   }`;

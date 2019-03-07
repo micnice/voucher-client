@@ -1,12 +1,10 @@
-import React, { Component } from 'react';
-import './App.css';
-import Home from './components/Home'; 
+import React, { Component, Fragment } from 'react';
+import Home from './components/Home';
 
 import CityList from './components/administration/CityList';
 import LevelList from './components/administration/LevelList';
 import UserList from './components/administration/UserList';
-
-import { BrowserRouter as Router, Route,Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import AdministrationList from './components/administration/AdministrationList';
 import VoucherTypeAdd from './components/administration/VoucherTypeAdd';
 import VoucherTypeList from './components/administration/VoucherTypeList';
@@ -26,55 +24,53 @@ import PermisionsList from './components/administration/PermisionsList';
 import PermisionsAdd from './components/administration/PermisionsAdd';
 import VoucherSetPage from './components/administration/VoucherSetPage';
 import VoucherSetPageAdd from './components/administration/VoucherSetPageAdd';
+import LoginPage from './components/security/LogingPage';
+import { PrivateRoute } from './components/security/PrivateRoute';
+import {logout} from './components/security/logout';
 
 
 
 
 class App extends Component {
   render() {
+
+
+
     return (
       <Router>
-      <div>
-        <Switch>
-         <Route exact path="/" exact component={Home} />
-         
-         <Route exact path="/administration" exact  component={AdministrationList} /> 
-         <Route exact path="/reporting" exact  component={ReportingList} /> 
-         <Route exact path="/reporting/beneficiary-list" exact  component={BeneficiaryList} /> 
-         <Route exact path="/reporting/voucher-sales-list" exact  component={VoucherSalesList} />    
-         <Route exact path="/reporting/beneficiaries-without-sales-list" exact  component={BeneficiaryWithoutSales} />        
-         <Route exact path="/administration/city"  exact  component={CityList} />
-         <Route exact path="/administration/level" exact component={LevelList} />
-         <Route exact path="/administration/user"  exact  component={UserList} />
-         <Route exact path="/administration/voucher-type"  exact  component={VoucherTypeAdd} />
-         <Route exact path="/administration/voucher-type-list"  exact  component={VoucherTypeList} />
-         <Route exact path="/administration/facility-list"  exact  component={FacilityList} />
-         <Route exact path="/administration/user-list"  exact  component={UserList} />
-         <Route exact path="/administration/user-add"  exact  component={UserAdd} />
-         <Route exact path="/administration/service-provider-list"  exact  component={ServiceProviderList} />
-         <Route exact path="/administration/city-add"  exact  component={CityAdd} />
-         <Route exact path="/administration/level-add"  exact  component={LevelAdd} />
-         <Route exact path="/administration/parameter-configuartion"  exact  component={ParameterConfiguration} />
-         <Route exact path="/administration/role-list"  exact  component={RoleList} />
-         <Route exact path="/administration/role-add"  exact  component={RoleAdd} />
-         <Route exact path="/administration/permission-list"  exact  component={PermisionsList} />
-         <Route exact path="/administration/permission-add"  exact  component={PermisionsAdd} />
-         <Route exact path="/administration/voucher-set"  exact  component={VoucherSetPage} />
-         <Route exact path="/administration/voucher-set-add"  exact  component={VoucherSetPageAdd} />
 
-
-
-         
-       
-        
-         
-         
-         
-         
+        <Switch >
+          <Route exact path="/login" exact component={LoginPage} />
+          <PrivateRoute exact path="/" component={Home} />
+          <PrivateRoute exact path="/administration" exact component={AdministrationList} />
+          <PrivateRoute exact path="/reporting" exact component={ReportingList} />
+          <PrivateRoute exact path="/reporting/beneficiary-list" exact component={BeneficiaryList} />
+          <PrivateRoute exact path="/reporting/voucher-sales-list" exact component={VoucherSalesList} />
+          <PrivateRoute exact path="/reporting/beneficiaries-without-sales-list" exact component={BeneficiaryWithoutSales} />
+          <PrivateRoute exact path="/administration/city" exact component={CityList} />
+          <PrivateRoute exact path="/administration/level" exact component={LevelList} />
+          <PrivateRoute exact path="/administration/user" exact component={UserList} />
+          <PrivateRoute exact path="/administration/voucher-type" exact component={VoucherTypeAdd} />
+          <PrivateRoute exact path="/administration/voucher-type-list" exact component={VoucherTypeList} />
+          <PrivateRoute exact path="/administration/facility-list" exact component={FacilityList} />
+          <PrivateRoute exact path="/administration/user-list" exact component={UserList} />
+          <PrivateRoute exact p2ath="/administration/user-add" exact component={UserAdd} />
+          <PrivateRoute exact path="/administration/service-provider-list" exact component={ServiceProviderList} />
+          <PrivateRoute exact path="/administration/city-add" exact component={CityAdd} />
+          <PrivateRoute exact path="/administration/level-add" exact component={LevelAdd} />
+          <PrivateRoute exact path="/administration/parameter-configuartion" exact component={ParameterConfiguration} />
+          <PrivateRoute exact path="/administration/role-list" exact component={RoleList} />
+          <PrivateRoute exact path="/administration/role-add" exact component={RoleAdd} />
+          <PrivateRoute exact path="/administration/permission-list" exact component={PermisionsList} />
+          <PrivateRoute exact path="/administration/permission-add" exact component={PermisionsAdd} />
+          <PrivateRoute exact path="/administration/voucher-set" exact component={VoucherSetPage} />
+          <PrivateRoute exact path="/administration/voucher-set-add" exact component={VoucherSetPageAdd} />
+          <PrivateRoute exact path="/logout" exact component={logout} />
         </Switch>
-         </div>
-    </Router>
+      </Router>
     );
+
+
   }
 }
 

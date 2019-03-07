@@ -16,7 +16,7 @@ export default class ParameterConfiguration extends Component {
             <div>
                 <Header />
 
-                <br /> <br />
+                <br/><br/><br/><br/>
                 <MDBContainer>
                     <MDBBreadcrumb>
                         <MDBBreadcrumbItem><NavLink to="/administration">Administration</NavLink></MDBBreadcrumbItem>

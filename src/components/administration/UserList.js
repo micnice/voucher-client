@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import Header from './../fragments/Header';
 import FooterPage from './../fragments/FooterPage';
-import { Container, Table, Link } from 'reactstrap';
+import { Container,} from 'reactstrap';
 import axios from 'axios';
 import { print } from 'graphql';
 import { USER_LIST } from './../queryResolver';
 import { GRAPHQL_BASE_URL } from './../BaseUrlUtil';
 import { NavLink } from 'react-router-dom'
-import { MDBIcon, MDBBtn,MDBDataTable, MDBContainer, MDBRow, MDBCol, MDBBreadcrumb, MDBBreadcrumbItem, } from "mdbreact";
+import { MDBIcon, MDBBtn,MDBDataTable, MDBBreadcrumb, MDBBreadcrumbItem, } from "mdbreact";
 
  export default class UserList extends Component{
   state = {
@@ -57,7 +57,7 @@ import { MDBIcon, MDBBtn,MDBDataTable, MDBContainer, MDBRow, MDBCol, MDBBreadcru
     return (
       <div>
         <Header />
-        <br /> <br />
+        <br/><br/><br/><br/>
                 <Container>
                     <MDBBreadcrumb>
                         <MDBBreadcrumbItem><NavLink to="/administration">Administration</NavLink></MDBBreadcrumbItem>

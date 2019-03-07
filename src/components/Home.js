@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import Header from './fragments/Header';
 import FooterPage from './fragments/FooterPage';
-import { MDBContainer, Col, MDBBreadcrumb, MDBBreadcrumbItem, Container,MDBCard, MDBCardBody, MDBIcon ,MDBFormInline, MDBBtn} from "mdbreact";
+import { MDBContainer, Col, MDBBreadcrumb, MDBBreadcrumbItem, Container,MDBCard, MDBCardBody,MDBFormInline} from "mdbreact";
 
-import TeamPage from './TeamPage';
 import AdminCardSection1 from './administration/AdminCardSection1'; 
 import { Bar, Line, Pie } from 'react-chartjs-2';
 import { NavLink } from 'react-router-dom'
@@ -35,7 +34,7 @@ export default class Home extends Component {
     return (
       <div>
         <Header />
-<br/>
+<br/><br/><br/><br/>
 <Container>
 <MDBCard className="mb-5">
         <MDBCardBody id="breadcrumb" className="d-flex align-items-center justify-content-between">
